@@ -1,0 +1,51 @@
+
+
+<div class="container my-5 student-table">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <a class="btn btn-primary" href="/student/create">Add New Student</a>
+            <a class="btn btn-danger" href="/student/unverifyed">Unverifyed</a>
+        </div>
+
+        <br>
+        <br>
+     
+
+            <% students.forEach((stu,index) => { %>
+               
+           <!-- <div class="user-info-single"> -->
+           
+
+                <div class="col-md-3">
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="user-info">
+                                <% if (stu.photo == '../public/images/avatar.png') { %>
+                                    <img src= "<%= stu.photo %>"    alt="">
+                                 <% } else { %>
+    
+                                    <img src= "/public/images/<%= stu.photo %>"    alt="">
+    
+                                  
+                                <% } %>
+                                <h2><%= stu.name %></h2>
+                                <p><%= stu.cell %></p>
+                                <hr>
+                                <a class=" btn btn-info" href="/student/<%= stu.id %> ">View</a>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            
+                <% }) %>
+           
+           <!-- </div> -->
+        
+        
+        
+       
+    </div>
+</div>
